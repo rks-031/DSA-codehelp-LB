@@ -1,31 +1,14 @@
 #include <bits/stdc++.h>
 using namespace std;
 
-void printArray(int a[], int n)
-{
-        for (int i = 0; i < n; i++)
-        {
-                cout << a[i] << " ";
-        }
-}
-
 int findUnique(int a[], int size)
 {
+        int unique = 0;
         for (int i = 0; i < size; i++)
         {
-                int flag = 0;
-                int temp = a[i];
-                for (int j = i + 1; j < size; j++)
-                {
-
-                        if (a[j] == temp)
-                                flag = 1;
-                }
-                if (flag == 0)
-                {
-                        return temp;
-                }
+                unique ^= a[i];
         }
+        return unique;
 }
 
 int main()
