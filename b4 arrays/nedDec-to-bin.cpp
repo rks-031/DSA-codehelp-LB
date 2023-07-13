@@ -1,35 +1,43 @@
-#include <iostream>
+#include <bits/stdc++.h>
 using namespace std;
 
-void print_binary(int num)
+string revString(string str, char s)
 {
-        // `result` stores the binary notation of `num` in decimal format
-        int result = 0;
+        int n = str.length();
+        for (int i = n; i < 8; i++)
+                str += s;
+        n = str.length();
+        string ans = "";
+        for (int i = n - 1; i >= 0; i--)
+                ans += str[i];
+        return ans;
+}
 
-        // It ignores leading zeros and leading ones
-        int place_value = 1;
-        while (!(num == 0 | num == -1))
+string DecToBin(int num)
+{
+        string str = "";
+        char s = '0';
+        if (num < 0)
+                s = '1';
+        while (!(num == 0 || num == -1))
         {
-                // Extracting the rightmost bit from `num`
-                int bit = num & 1;
-
-                // appending `bit` to `result`
-                result += bit * place_value;
-
-                // Shifting `num` to the right
-                // so that second bit (from right) now become the rightmost bit
+                if (num & 1)
+                {
+                        str += "1";
+                }
+                else
+                {
+                        str += "0";
+                }
                 num = num >> 1;
-                place_value *= 10;
         }
-
-        cout << result << endl;
+        return revString(str, s);
 }
 
 int main()
 {
-        int number = -6;
-        int neg_number = ~number + 1; // Took 2's compliment of number
-
-        print_binary(number);
-        print_binary(neg_number);
+        int num;
+        cin >> num;
+        string str = DecToBin(num);
+        cout << str;
 }
