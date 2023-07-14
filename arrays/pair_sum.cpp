@@ -1,5 +1,4 @@
-#include <iostream>
-#include <vector>
+#include <bits/stdc++.h>
 using namespace std;
 
 // each pair should be sorted
@@ -20,6 +19,7 @@ vector<vector<int>> findPair(int a[], int n, int sum)
                         }
                 }
         }
+        sort(ans.begin(), ans.end());
         return ans;
 }
 
