@@ -39,13 +39,20 @@ int main()
 
         vector<vector<int>> triplets = findTriplets(arr, n, K);
 
-        for (const auto &triplet : triplets)
+        if (triplets.empty())
         {
-                for (const auto &num : triplet)
+                cout << "-1";
+        }
+        else
+        {
+                for (const auto &triplet : triplets)
                 {
-                        cout << num << " ";
+                        for (const auto &num : triplet)
+                        {
+                                cout << num << " ";
+                        }
+                        cout << endl;
                 }
-                cout << endl;
         }
 
         return 0;
