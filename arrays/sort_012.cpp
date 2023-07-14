@@ -39,7 +39,7 @@ int main()
         int n;
         cin >> n;
         int a[n];
-        // enter only 0's and 1's
+        // enter only 0's and 1's and 2's
         for (int i = 0; i < n; i++)
         {
                 cin >> a[i];
