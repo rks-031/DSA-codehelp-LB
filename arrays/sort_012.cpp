@@ -21,11 +21,13 @@ vector<int> sort012(int a[], int n)
                 ans.push_back(0);
                 index++;
         }
+        // writing 1's
         for (int i = 0; i < n1; i++)
         {
                 ans.push_back(1);
                 index++;
         }
+        // writing 2's
         for (int i = 0; i < n2; i++)
         {
                 ans.push_back(2);
