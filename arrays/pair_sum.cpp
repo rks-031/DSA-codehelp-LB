@@ -1,21 +1,26 @@
 #include <iostream>
+#include <vector>
 using namespace std;
 
 // each pair should be sorted
 
-pair<int, int> findPair(int a[], int n, int sum)
+vector<vector<int>> findPair(int a[], int n, int sum)
 {
+        vector<vector<int>> ans;
         for (int i = 0; i < n; i++)
         {
                 for (int j = i + 1; j < n; j++)
                 {
-                        if ((a[i] + a[j] == sum) && a[i] < a[j])
+                        if ((a[i] + a[j] == sum))
                         {
-                                return make_pair(a[i], a[j]);
+                                vector<int> temp;
+                                temp.push_back(min(a[i], a[j]));
+                                temp.push_back(max(a[i], a[j]));
+                                ans.push_back(temp);
                         }
                 }
         }
-        return make_pair(-1, -1);
+        return ans;
 }
 
 int main()
@@ -28,13 +33,9 @@ int main()
         {
                 cin >> a[i];
         }
-        pair<int, int> ans = findPair(a, n, sum);
-        if (ans.first == -1 && ans.second == -1)
+        vector<vector<int>> ans = findPair(a, n, sum);
+        for (int i = 0; i < ans.size(); i++)
         {
-                cout << "Pair not found";
-        }
-        else
-        {
-                cout << ans.first << " " << ans.second << endl;
+                cout << ans[i][0] << " " << ans[i][1] << endl;
         }
 }
