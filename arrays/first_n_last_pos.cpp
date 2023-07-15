@@ -3,7 +3,7 @@ using namespace std;
 
 // time complexity: O(logn)
 
-int firstOccurence(int a[], int n, int key)
+int firstOccurence(vector<int> &a, int n, int key)
 {
         int start = 0;
         int end = n - 1;
@@ -29,7 +29,7 @@ int firstOccurence(int a[], int n, int key)
         return ans;
 }
 
-int lastOccurence(int a[], int n, int key)
+int lastOccurence(vector<int> &a, int n, int key)
 {
         int start = 0;
         int end = n - 1;
@@ -53,19 +53,26 @@ int lastOccurence(int a[], int n, int key)
                 mid = start + (end - start) / 2;
         }
         return ans;
+}
+pair<int, int> firstAndLastOccurence(vector<int> &arr, int n, int k)
+{
+        pair<int, int> p;
+        p.first = firstOccurence(arr, n, k);
+        p.second = lastOccurence(arr, n, k);
+        return p;
 }
 
 int main()
 {
         int n;
         cin >> n;
-        int a[n];
+        vector<int> a(n);
         for (int i = 0; i < n; i++)
         {
                 cin >> a[i];
         }
         int key;
         cin >> key;
-        cout << firstOccurence(a, n, key) << " ";
-        cout << lastOccurence(a, n, key);
+        pair<int, int> result = firstAndLastOccurence(a, n, key);
+        cout << result.first << " " << result.second << endl;
 }
