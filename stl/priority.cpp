@@ -4,6 +4,7 @@ using namespace std;
 int main()
 {
         // in a priority queue, element having the max value stays at the top
+        // max heap
         priority_queue<int> pq;
         pq.push(5);     //{5}
         pq.push(2);     //{5,2}
