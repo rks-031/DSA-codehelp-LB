@@ -5,13 +5,13 @@ void revString(string &s)
 {
         int start = 0;
         int end = s.length() - 1;
-        while (start < end)
+        while (start <= end)
         {
                 swap(s[start++], s[end--]);
         }
 }
 
-bool checkPalindrome(const string &s)
+bool checkPalindrome(string &s)
 {
         string str = s;
         revString(str);
@@ -23,12 +23,12 @@ int main()
         string s;
         getline(cin, s);
         bool value = checkPalindrome(s);
-        if (value)
+        if (value == 0)
         {
-                cout << "YES";
+                cout << "NO";
         }
         else
         {
-                cout << "NO";
+                cout << "YES";
         }
 }
