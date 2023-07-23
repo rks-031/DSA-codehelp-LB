@@ -54,7 +54,7 @@ bool isValidPalindrome(string s)
         }
 
         // converting every character to lowercase
-        for (int i = 0; i < s.length(); i++)
+        for (int i = 0; i < temp.length(); i++)
         {
                 temp[i] = toLowerCase(temp[i]);
         }
