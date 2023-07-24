@@ -6,6 +6,8 @@
     "ostream": "cpp",
     "vector": "cpp",
     "xlocale": "cpp",
-    "xstring": "cpp"
+    "xstring": "cpp",
+    "list": "cpp",
+    "xhash": "cpp"
   }
 }
