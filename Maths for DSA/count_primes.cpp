@@ -11,6 +11,7 @@ int countPrimes(int n)
         for (int i = 2; i < n; i++)
         {
                 if (prime[i])
+                {
                         count++;
 
                         // us number k table me jitne bhi number aa rhe hain unko false(non-prime) mark krdo
