@@ -13,10 +13,6 @@ bool searchMatrix(vector<vector<int>> &matrix, int target)
                         ans.push_back(matrix[i][j]);
                 }
         }
-        // for (int i = 0; i < ans.size(); i++)
-        // {
-        //         cout << ans[i] << " ";
-        // }
 
         int start = 0;
         int end = ans.size() - 1;
