@@ -35,7 +35,7 @@ vector<int> spiralOrder(vector<vector<int>> &matrix)
                 endingCol--;
 
                 // printing last row
-                for (int i = endingCol; count < total && i >=startingCol; i--)
+                for (int i = endingCol; count < total && i >= startingCol; i--)
                 {
                         ans.push_back(matrix[endingRow][i]);
                         count++;
@@ -51,4 +51,24 @@ vector<int> spiralOrder(vector<vector<int>> &matrix)
                 startingCol++;
         }
         return ans;
+}
+
+int main()
+{
+        int r, c;
+        cin >> r >> c;
+        vector<vector<int>> matrix(r, vector<int>(c));
+        for (int i = 0; i < r; i++)
+        {
+                for (int j = 0; j < c; j++)
+                {
+                        cin >> matrix[i][j];
+                }
+        }
+        vector<int> result = spiralOrder(matrix);
+        for (int i = 0; i < result.size(); i++)
+        {
+                cout << result[i] << " ";
+        }
+        return 0;
 }
