@@ -8,6 +8,7 @@
     "xlocale": "cpp",
     "xstring": "cpp",
     "list": "cpp",
-    "xhash": "cpp"
+    "xhash": "cpp",
+    "utility": "cpp"
   }
 }
