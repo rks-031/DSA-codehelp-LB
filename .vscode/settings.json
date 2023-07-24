@@ -9,6 +9,9 @@
     "xstring": "cpp",
     "list": "cpp",
     "xhash": "cpp",
-    "utility": "cpp"
+    "utility": "cpp",
+    "iterator": "cpp",
+    "xmemory": "cpp",
+    "xutility": "cpp"
   }
 }
