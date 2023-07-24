@@ -3,7 +3,30 @@ using namespace std;
 
 bool searchMatrix(vector<vector<int>> &matrix, int target)
 {
-        
+        int r = matrix.size();
+        int c = matrix[0].size();
+
+        int rowIndex = 0;
+        int colIndex = c - 1;
+
+        while (rowIndex < r && colIndex >= 0)
+        {
+                int element = matrix[rowIndex][colIndex];
+
+                if (element == target)
+                {
+                        return true;
+                }
+                else if (element > target) // dusre row me hoga then element
+                {
+                        colIndex--;
+                }
+                else // piche wale columns me hoga
+                {
+                        rowIndex++;
+                }
+        }
+        return false;
 }
 
 int main()
