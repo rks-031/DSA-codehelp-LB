@@ -8,8 +8,17 @@ int sumElements(int *arr, int n)
         {
                 return 0;
         }
+        if (n == 1)
+        {
+                return arr[0];
+        }
         // recursive step
-        return arr[0] + sumElements(arr + 1, n - 1);
+        else
+        {
+                int remainingPart = sumElements(arr + 1, n - 1);
+                int sum = arr[0] + remainingPart;
+                return sum;
+        }
 }
 
 int main()
