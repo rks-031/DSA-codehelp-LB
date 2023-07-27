@@ -1,8 +1,18 @@
 #include <bits/stdc++.h>
 using namespace std;
 
+void printArray(int *arr, int n)
+{
+        for (int i = 0; i < n; i++)
+        {
+                cout << arr[i] << " ";
+        }
+        cout << endl;
+}
+
 bool linearSearch(int *arr, int n, int target)
 {
+        printArray(arr, n);
         if (n == 0)
         {
                 return false;
@@ -29,5 +39,5 @@ int main()
         int target;
         cin >> target;
         bool value = linearSearch(arr, n, target);
-        value == 1 ? cout << "Found" : cout << "Not found";
+        value == 1 ? cout << "Present" : cout << "Absent";
 }
