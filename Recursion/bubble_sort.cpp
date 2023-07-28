@@ -3,7 +3,7 @@ using namespace std;
 
 void bubbleSort(int *arr, int n)
 {
-        if (n == 1)
+        if (n == 1 || n == 0)
         {
                 return;
         }
