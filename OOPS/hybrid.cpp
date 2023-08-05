@@ -48,3 +48,5 @@ int main()
 
         return 0;
 }
+
+// to avoid inheritance ambiguity: we use: obj.<class_name>::<func_name();
