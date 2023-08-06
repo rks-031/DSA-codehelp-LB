@@ -136,7 +136,7 @@ int main()
         InsertAtPos(tail, head, 22, 4);
         print(head);
 
-        DeleteNode(head, 1);
+        DeleteNode(head, 2);
         print(head);
 
         // cout << head->data << " " << tail->data << endl;
