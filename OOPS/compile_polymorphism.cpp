@@ -67,9 +67,6 @@ int main() {
     Dog obj;
     obj.speak();
 
-
-
-
 /*
     B obj1, obj2;
 
@@ -78,12 +75,6 @@ int main() {
 
     obj1 + obj2;
     obj1();*/
-
-
-
-
-
-
 
 
 /*
