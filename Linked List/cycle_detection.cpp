@@ -21,6 +21,7 @@ bool detectLoop(Node *head)
 }
 
 // floyd's cycle detection algorithm
+// time complexity: O(n)
 bool detectLoop(Node *head)
 {
         if (head == NULL)
