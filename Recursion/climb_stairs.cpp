@@ -7,7 +7,8 @@ int countDistinctWays(int nStairs)
         {
                 return 0;
         }
-        if (nStairs == 0)
+        if
+         (nStairs == 0)
         {
                 return 1;
         }

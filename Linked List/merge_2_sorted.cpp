@@ -50,6 +50,8 @@ Node<int> *solve(Node<int> *first, Node<int> *second)
                         {
                                 next2 = next2->next;
                         }
+                        curr1 = curr2;
+                        next1 = next2;
                 }
                 else
                 {
