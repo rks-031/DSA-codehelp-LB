@@ -10,8 +10,6 @@ bool isPalindrome(Node *head)
 
         int start = 0;
         int end = forward.size() - 1;
-
-        // vector<int> backward;
         while (start <= end)
         {
                 if (forward[start] != forward[end])
