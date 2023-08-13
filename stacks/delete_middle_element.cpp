@@ -9,8 +9,7 @@ void solve(stack<int> &inputStack, int count, int size)
                 return;
         }
 
-        int num = inputStack.top();
-        inputStack.pop();
+        // recursive call
         solve(inputStack, count + 1, size);
         inputStack.push(num);
 }
