@@ -49,6 +49,8 @@
     "xlocnum": "cpp",
     "xstddef": "cpp",
     "xtr1common": "cpp",
-    "bitset": "cpp"
+    "bitset": "cpp",
+    "deque": "cpp",
+    "span": "cpp"
   }
 }
