@@ -56,7 +56,7 @@ vector<long long> printFirstNegativeInteger(long long int A[],
         else
         {
                 ans.push_back(0);
-        }
+        }       
 
         // process for remaining windows
         for (int i = K; i < N; i++)
