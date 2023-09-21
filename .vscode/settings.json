@@ -51,6 +51,7 @@
     "xtr1common": "cpp",
     "bitset": "cpp",
     "deque": "cpp",
-    "span": "cpp"
+    "span": "cpp",
+    "queue": "cpp"
   }
 }
