@@ -19,6 +19,7 @@ public:
                 {
                         pair<Node *, int> temp = q.front();
                         q.pop();
+
                         Node *frontNode = temp.first;
                         int hd = temp.second;
 
