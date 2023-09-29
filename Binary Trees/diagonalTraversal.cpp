@@ -1,4 +1,3 @@
-
 vector<int> diagonal(Node *root)
 {
         // your code here
