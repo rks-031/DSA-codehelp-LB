@@ -9,7 +9,7 @@ public:
                         if (arr[i] == value)
                                 return i;
                 }
-                return -1; // Add a default return value to handle cases where value is not found.
+                return -1; 
         }
 
         Node *solve(int in[], int pre[], int inStrt, int inEnd, int &preIndex)
