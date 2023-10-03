@@ -49,7 +49,7 @@ Node *deleteANodeFromBST(Node *root, int x)
                 // 2 child
                 if (root->left != nullptr && root->right != nullptr)
                 {
-                        int mini = minVal(root->right)->data;
+                        int mini = minVal(root->right);
                         root->data = mini;
                         root->right = deleteANodeFromBST(root->right, mini);
                         return root;
