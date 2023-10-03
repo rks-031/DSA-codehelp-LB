@@ -52,6 +52,7 @@
     "bitset": "cpp",
     "deque": "cpp",
     "span": "cpp",
-    "queue": "cpp"
+    "queue": "cpp",
+    "ranges": "cpp"
   }
 }
