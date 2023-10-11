@@ -87,12 +87,12 @@ void heapify(int arr[], int n, int i)
         int left = 2 * i;
         int right = 2 * i + 1;
 
-        if (left < n && arr[largest] < arr[left])
+        if (left <= n && arr[largest] < arr[left])
         {
                 largest = left;
         }
 
-        if (right < n && arr[largest] < arr[right])
+        if (right <= n && arr[largest] < arr[right])
         {
                 largest = right;
         }
@@ -105,6 +105,18 @@ void heapify(int arr[], int n, int i)
                 swap(arr[largest], arr[i]);
                 heapify(arr, n, largest);
         }
+}
+
+void heapSort(int arr[], int n)
+{
+        int size = n;
+        while (size > 1)
+        {
+                swap(arr[size], arr[1]);
+                size--;
+        }
+        // root node ko sahi position pe laane k liye heapify
+        heapify(arr, size, 1);
 }
 
 int main()
@@ -120,21 +132,53 @@ int main()
         // h.deleteFromHeap();
         // h.print();
 
-        int arr[6] = {-1, 54, 53, 55, 52, 50};
-        int n = 5;
+        // int arr[6] = {-1, 54, 53, 55, 52, 50};
+        // int n = 5;
 
-        for (int i = n / 2; i > 0; i--)
-        {
-                heapify(arr, n, i);
-        }
+        // for (int i = n / 2; i > 0; i--)
+        // {
+        //         heapify(arr, n, i);
+        // }
 
-        cout << "Printing the heapified array" << endl;
+        // cout << "Printing the heapified array" << endl;
 
-        for (int i = 1; i <= n; i++)
-        {
-                cout << arr[i] << " ";
-        }
-        cout << endl;
+        // for (int i = 1; i <= n; i++)
+        // {
+        //         cout << arr[i] << " ";
+        // }
+        // cout << endl;
+
+        // cout << "Printing the sorted array" << endl;
+
+        // for (int i = 1; i <= n; i++)
+        // {
+        //         cout << arr[i] << " ";
+        // }
+        // cout << endl;
+
+        cout << "Maxheap using stl" << endl;
+        priority_queue<int> pq; // maxheap
+        pq.push(4);
+        pq.push(3);
+        pq.push(2);
+        pq.push(1);
+
+        cout << pq.top() << endl;
+        pq.pop();
+        cout << pq.top() << endl;
+        cout << pq.size() << endl;
+
+        cout << "Minheap using stl" << endl;
+        priority_queue<int, vector<int>, greater<int>> minheap;
+        minheap.push(4);
+        minheap.push(3);
+        minheap.push(2);
+        minheap.push(1);
+
+        cout << minheap.top() << endl;
+        minheap.pop();
+        cout << minheap.top() << endl;
+        cout << minheap.size() << endl;
 
         return 0;
 }
