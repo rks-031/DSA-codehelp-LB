@@ -11,7 +11,7 @@ public:
                 }
 
                 for (int i = k; i <= r; i++)
-                {
+                {       
                         if (arr[i] < pq.top())
                         {
                                 pq.pop();
