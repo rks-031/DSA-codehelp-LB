@@ -21,7 +21,7 @@ int main()
 
         // so either start frm the sorted string or sort the string first and then print the permutations
         string s1 = "231";
-        sort(s1.begin(), s1.end());
+        // sort(s1.begin(), s1.end());
         do
         {
                 cout << s1 << endl;
