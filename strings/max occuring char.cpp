@@ -5,6 +5,8 @@ int main() {
     string str = "abcbdeaaf";
     
     unordered_map<char, int> freq;
+
+    //unordered_map<string, int> freq;
     
     for(int i=0;i<str.length();i++){
         freq[str[i]]++;
