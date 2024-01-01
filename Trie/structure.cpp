@@ -96,9 +96,11 @@ int main()
 {
     Trie *t = new Trie();
 
-    t->insertWord("abcd");
+    t->insertWord("ARM");
+    t->insertWord("DO");
+    t->insertWord("TIME");
 
-    cout << "Present or Not: " << t->searchWord("abcd") << endl;
+    cout << "Present or Not: " << t->searchWord("TIM") << endl;
 
     delete t;
 
