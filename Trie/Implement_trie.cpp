@@ -44,7 +44,6 @@ public:
             return;
         }
 
-        // assumption: all the letters are in CAPS
         int index = word[0] - 'a';
         TrieNode *child;
 
