@@ -4,6 +4,7 @@ using namespace std;
 void rotate(vector<int> &nums, int k)
 {
         vector<int> temp(nums.size());
+        k = nums.size() - k;
         for (int i = 0; i < nums.size(); i++)
         {
                 int j = ((i + k) % nums.size());
