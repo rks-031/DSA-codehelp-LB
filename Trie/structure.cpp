@@ -21,6 +21,18 @@ public:
 
 class Trie
 {
+
+public:
+    bool allChildrenNull(TrieNode *node)
+    {
+        for (int i = 0; i < 26; i++)
+        {
+            if (node->children[i] != NULL)
+                return false;
+        }
+        return true;
+    }
+
 public:
     TrieNode *root;
 
@@ -90,6 +102,40 @@ public:
     {
         return searchUtil(root, word);
     }
+
+    void removeUtil(TrieNode *root, string word, int depth)
+    {
+        if (depth == word.length())
+        {
+            // Reached the end of the word, mark it as non-terminal
+            root->isTerminal = false;
+            return;
+        }
+
+        int index = word[depth] - 'A';
+        TrieNode *child = root->children[index];
+
+        if (child == NULL)
+        {
+            // Word not found in the trie
+            return;
+        }
+
+        // Recursion to the next level
+        removeUtil(child, word, depth + 1);
+
+        // Check if the child node can be removed
+        if (!child->isTerminal && allChildrenNull(child))
+        {
+            delete child;
+            root->children[index] = NULL;
+        }
+    }
+
+    void removeWord(string word)
+    {
+        removeUtil(root, word, 0);
+    }
 };
 
 int main()
@@ -100,7 +146,12 @@ int main()
     t->insertWord("DO");
     t->insertWord("TIME");
 
-    cout << "Present or Not: " << t->searchWord("TIM") << endl;
+    cout << "Present or Not: " << t->searchWord("DO") << endl;
+
+    // Remove the word "DO"
+    t->removeWord("DO");
+
+    cout << "Present or Not after removal: " << t->searchWord("DO") << endl;
 
     delete t;
 
