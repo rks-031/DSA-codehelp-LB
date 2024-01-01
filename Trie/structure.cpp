@@ -24,12 +24,18 @@ class Trie
 public:
     TrieNode *root;
 
+    Trie()
+    {
+        root = new TrieNode('\0');
+    }
+
     void insertUtil(TrieNode *root, string word)
     {
         // base case
         if (word.length() == 0)
         {
             root->isTerminal = true;
+            return;
         }
 
         // assumption: all the letters are in CAPS
@@ -56,4 +62,45 @@ public:
     {
         insertUtil(root, word);
     }
+
+    bool searchUtil(TrieNode *root, string word)
+    {
+        if (word.length() == 0)
+            return root->isTerminal;
+
+        int index = word[0] - 'A';
+        TrieNode *child;
+
+        // present
+        if (root->children[index] != NULL)
+        {
+            child = root->children[index];
+        }
+        else
+        {
+            // absent
+            return false;
+        }
+
+        // recursion
+        return searchUtil(child, word.substr(1));
+    }
+
+    bool searchWord(string word)
+    {
+        return searchUtil(root, word);
+    }
+};
+
+int main()
+{
+    Trie *t = new Trie();
+
+    t->insertWord("abcd");
+
+    cout << "Present or Not: " << t->searchWord("abcd") << endl;
+
+    delete t;
+
+    return 0;
 }
