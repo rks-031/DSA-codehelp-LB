@@ -59,3 +59,5 @@ string cycleDetection(vector<vector<int>> &edges, int n, int m)
     }
     return "No";
 }
+
+// time complexity:O(n)
