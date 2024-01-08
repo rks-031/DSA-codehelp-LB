@@ -1,4 +1,6 @@
 #include <bits/stdc++.h>
+using namespace std;
+
 vector<int> topologicalSort(vector<vector<int>> &edges, int v, int e)
 {
     // Write your code here
@@ -13,7 +15,8 @@ vector<int> topologicalSort(vector<vector<int>> &edges, int v, int e)
     }
 
     // indegrees
-    vector<int> indegree;
+    vector<int> indegree(v, 0); // Correct initialization
+
     for (auto i : adj)
     {
         for (auto j : i.second)
