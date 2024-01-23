@@ -1,53 +1,39 @@
-#include <bits/stdc++.h>
-vector<int> dijkstra(vector<vector<int>> &vec, int vertices, int edges, int source)
+class Solution
 {
-    unordered_map<int, list<pair<int, int>>> adj;
-    for (int i = 0; i < edges; i++)
+public:
+    // Function to find the shortest distance of all the vertices
+    // from the source vertex S.
+    vector<int> dijkstra(int V, vector<vector<int>> adj[], int S)
     {
-        int u = vec[i][0];
-        int v = vec[i][1];
-        int w = vec[i][2];
+        // Code here
+        set<pair<int, int>> st;
+        st.insert({0, S});
 
-        adj[u].push_back(make_pair(v, w));
-        adj[v].push_back(make_pair(u, w));
-    }
+        vector<int> dist(V, INT_MAX);
+        dist[S] = 0;
 
-    vector<int> dist(vertices);
-
-    for (int i = 0; i < vertices; i++)
-    {
-        dist[i] = INT_MAX;
-    }
-
-    set<pair<int, int>> st;
-
-    dist[source] = 0;
-
-    st.insert(make_pair(0, source));
-
-    while (!st.empty())
-    {
-        auto top = *(st.begin());
-        int nodeDist = top.first;
-        int topNode = top.second;
-
-        st.erase(st.begin());
-
-        for (auto neighbour : adj[topNode])
+        while (!st.empty())
         {
-            if (nodeDist + neighbour.second < dist[neighbour.first])
+            auto it = *(st.begin());
+            int u = it.second;
+            int dis = it.first;
+            st.erase(it);
+
+            for (auto it : adj[u])
             {
+                int v = it[0];
+                int w = it[1];
 
-                // check is an entry for the same node exits in the set
-                auto record = st.find(make_pair(dist[neighbour.first], neighbour.first));
-                if (record != st.end())
-                    st.erase(record);
-
-                dist[neighbour.first] = nodeDist + neighbour.second;
-                st.insert(make_pair(dist[neighbour.first], neighbour.first));
+                if (dis + w < dist[v])
+                {
+                    if (dist[v] != INT_MAX)
+                        st.erase({dist[v], v});
+                    dist[v] = dis + w;
+                    st.insert({dist[v], v});
+                }
             }
         }
-    }
 
-    return dist;
-}
+        return dist;
+    }
+};
