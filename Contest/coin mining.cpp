@@ -5,8 +5,8 @@ public:
         return (newX >= 0 && newX < n) && (newY >= 0 && newY < n) && !visited[newX][newY] && grid[newX][newY] != 0;
     }*/
 
-    void solve(int x, int y, vector<vector<int>> &grid, int n, vector<vector<bool>> &visited,
-               int &currentCoins)
+    int solve(int x, int y, vector<vector<int>> &grid, int n, vector<vector<bool>> &visited,
+              int &currentCoins)
     {
         // base case
         if (x < 0 || x >= n || y < 0 || y >= n || grid[x][y] == 0)
