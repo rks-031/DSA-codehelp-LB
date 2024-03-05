@@ -1,3 +1,10 @@
+/*
+struct Item{
+    int value;
+    int weight;
+};
+*/
+
 class Solution
 {
 public:
