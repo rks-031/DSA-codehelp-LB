@@ -20,21 +20,6 @@ public:
             else
                 e--;
         }
-
-        // s=0;
-        // while(s<e){
-        //     int currArea  = min(height[s], height[e]) * (e-s);
-        //     area.push_back(currArea);
-        //     e--;
-        // }
-
-        // for(int i=1;i<n;i++){
-        //     int currArea = min(height[i], height[i-1])*1;
-        //     area.push_back(currArea);
-        // }
-
-        // for(int i=0;i<area.size();i++) maxArea = max(maxArea, area[i]);
-
         return maxArea;
     }
 };
