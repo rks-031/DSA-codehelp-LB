@@ -9,7 +9,7 @@ public:
         if (n == 1)
             return nums[0];
 
-        int k = 0;
+        int k = 0; // to find the rotating position
         for (int i = 1; i < n; i++)
         {
             if (nums[i] < nums[i - 1])
@@ -18,7 +18,7 @@ public:
                 break;
             }
         }
-        if (k == 0)
+        if (k == 0) // array is not rotated
             return nums[0];
         // cout<<k;
 
